@@ -13,6 +13,7 @@ type Props = {
 }
 
 const Navbar = ({isTopOfPage, selectedPage,setSelectedPage}: Props) => {
+    // 不在页面顶部需要对菜单染色
     const flexBetween = "flex items-center justify-between"
     const [isMenuToggled, setIsMenuToggled]=useState<boolean>(false)
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
@@ -24,7 +25,7 @@ const Navbar = ({isTopOfPage, selectedPage,setSelectedPage}: Props) => {
             <div className={`${flexBetween} mx-auto w-5/6`}>
                 <div className={`${flexBetween} w-full gap-16`}>
                     <img alt="logo" src={Logo} />
-                    
+                    {/* 根据屏幕宽度展示不同的菜单 */}
                     {isAboveMediumScreens ? (
                     <div className={`${flexBetween} w-full`}>
                         <div className={`${flexBetween} gap-8 text-sm`}> 

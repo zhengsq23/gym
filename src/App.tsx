@@ -1,11 +1,13 @@
 import Navbar from "@/scenes/navbar"
 import { useEffect, useState } from "react"
 import { SelectedPage } from "./shared/types"
-
+import Home from '@/scenes/home'
+// import Benefit from '@/scenes/benefit'
 function App() {
   const [selectedPage, setSelectedPage]=useState<SelectedPage>(SelectedPage.Home)
   const [isTopOfPage, setIsTopOfPage]=useState<boolean>(true);
   useEffect(()=>{
+    // 判断当前是否在页面顶部
     const handleScroll = () => {
       if(window.scrollY===0){
         setIsTopOfPage(true)
@@ -24,7 +26,7 @@ function App() {
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage} 
         setSelectedPage={setSelectedPage}/>
-   
+      <Home setSelectedPage={setSelectedPage}/>
     </div>
   )
 }

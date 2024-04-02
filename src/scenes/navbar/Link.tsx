@@ -14,6 +14,7 @@ const Link = ({
 }: Props) => {
     const lowerCasePage=page.toLowerCase().replace(/ /g, "") as SelectedPage
   return (
+    // 当前菜单为激活页则菜单变颜色
     <AnchorLink
     className={`${selectedPage === lowerCasePage ? "text-primary-500":""}
         transition duration-500 hover:text-primary-300
